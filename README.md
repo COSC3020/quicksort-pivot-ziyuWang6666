@@ -47,4 +47,27 @@ E[X] = $O(n\lg{}n)$
 
 Therefore, if we use randomized-quicksort, quicksort's expected running time is $O(n\lg{}n)$ when all element values differ.
 
+#### The possibility of median-three-choose method to choose a good pivot
+
+1/2 possible rate to choose a good pivot since 1/n*(3n/4-n/4) = 1/2
+
+Assume any whole list as 1, and split the list into 4 parts. 1/4 to choose a pivot is from left(L), 1/4 and another 1/4 from center parts as good pivot(M), and the rest 1/4 is from right part(R).
+
+Exploring all possible combines:
+
+LLL $\frac{1}{4} * \frac{1}{4} * \frac{1}{4} = \frac{1}{64}$
+
+LMR $\frac{1}{4} * \frac{2}{4} * \frac{1}{4} = \frac{2}{64}$
+
+LMM $\frac{1}{4} * \frac{2}{4} * \frac{2}{4} = \frac{4}{64}$
+
+LRR $\frac{1}{4} * \frac{1}{4} * \frac{1}{4} = \frac{1}{64}$
+
+...
+
+By adding all those possible combines to get 44/64 = 11/16 = 68.75%
+
+Therefore, the total possibility of choosing a good pivot from the median-three-choose method is 68.75%.
+
+
 // get help from TA and textbook: Introduce to algorithm p180-184
